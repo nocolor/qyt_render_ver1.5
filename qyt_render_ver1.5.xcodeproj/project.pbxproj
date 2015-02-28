@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B148C041A9EFBA400BDF4FD /* QYTSpectrum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B148C021A9EFBA400BDF4FD /* QYTSpectrum.cpp */; };
+		2B148C091A9F063E00BDF4FD /* QYTSpectrum_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B148C071A9F063E00BDF4FD /* QYTSpectrum_test.cpp */; };
+		2B9917781A99B5AE00D2D0F4 /* QYTSampler_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B9917761A99B5AE00D2D0F4 /* QYTSampler_test.cpp */; };
+		2B99177B1A99C82600D2D0F4 /* QYTCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B9917791A99C82600D2D0F4 /* QYTCamera.cpp */; };
+		2B99177E1A99CC0100D2D0F4 /* QYTThinLensCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B99177C1A99CC0100D2D0F4 /* QYTThinLensCamera.cpp */; };
+		2BA32B591A908D1D00134940 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BA32B581A908D1D00134940 /* main.cpp */; };
+		2BA32B621A908D3A00134940 /* QYTError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BA32B601A908D3A00134940 /* QYTError.cpp */; };
+		2BD99FE51A959BB4000B701E /* QYTSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD99FE31A959BB4000B701E /* QYTSphere.cpp */; };
+		2BD99FE91A95CF1D000B701E /* QYTSphere_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD99FE71A95CF1D000B701E /* QYTSphere_test.cpp */; };
+		2BD99FF51A95F685000B701E /* qyt_thread_safe_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD99FEB1A95F685000B701E /* qyt_thread_safe_queue.cpp */; };
+		2BD99FF61A95F685000B701E /* qyt_join_thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD99FED1A95F685000B701E /* qyt_join_thread.cpp */; };
+		2BD99FF71A95F685000B701E /* qyt_function_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD99FEF1A95F685000B701E /* qyt_function_wrapper.cpp */; };
+		2BD99FF81A95F685000B701E /* qyt_work_stealing_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD99FF11A95F685000B701E /* qyt_work_stealing_queue.cpp */; };
+		2BD99FF91A95F685000B701E /* qyt_thread_pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD99FF31A95F685000B701E /* qyt_thread_pool.cpp */; };
+		2BD99FFD1A961CFC000B701E /* QYTThreadPool_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD99FFB1A961CFC000B701E /* QYTThreadPool_test.cpp */; };
+		2BD9A0031A96327E000B701E /* QYTTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9A0011A96327E000B701E /* QYTTimer.cpp */; };
+		2BD9A0061A963D34000B701E /* QYTSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9A0041A963D34000B701E /* QYTSampler.cpp */; };
+		2BE37B611A946A98006536C2 /* QYTVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE37B5F1A946A98006536C2 /* QYTVector3.cpp */; };
+		2BE37B691A948F2C006536C2 /* QYTPoint3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE37B671A948F2C006536C2 /* QYTPoint3.cpp */; };
+		2BE37B701A94B9AB006536C2 /* QYTMatrix4x4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE37B6E1A94B9AB006536C2 /* QYTMatrix4x4.cpp */; };
+		2BE37B751A94C198006536C2 /* qyt_ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE37B711A94C198006536C2 /* qyt_ray.cpp */; };
+		2BE37B761A94C198006536C2 /* qyt_bbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE37B731A94C198006536C2 /* qyt_bbox.cpp */; };
+		2BE37B791A94CA1E006536C2 /* QYTTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE37B771A94CA1E006536C2 /* QYTTransform.cpp */; };
+		2BE37B821A94E2DA006536C2 /* transfrom_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE37B801A94E2DA006536C2 /* transfrom_test.cpp */; };
+		2BE37B871A94EB5A006536C2 /* QYTShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE37B831A94EB5A006536C2 /* QYTShape.cpp */; };
+		2BE37B881A94EB5A006536C2 /* QYTDifferentialGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE37B851A94EB5A006536C2 /* QYTDifferentialGeometry.cpp */; };
+		2BE869FD1A96E34E0057D5A5 /* QYTMultiJitteredSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE869FB1A96E34E0057D5A5 /* QYTMultiJitteredSampler.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2BA32B531A908D1D00134940 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2B148C021A9EFBA400BDF4FD /* QYTSpectrum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTSpectrum.cpp; sourceTree = "<group>"; };
+		2B148C031A9EFBA400BDF4FD /* QYTSpectrum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTSpectrum.h; sourceTree = "<group>"; };
+		2B148C071A9F063E00BDF4FD /* QYTSpectrum_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTSpectrum_test.cpp; sourceTree = "<group>"; };
+		2B148C081A9F063E00BDF4FD /* QYTSpectrum_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTSpectrum_test.h; sourceTree = "<group>"; };
+		2B9917761A99B5AE00D2D0F4 /* QYTSampler_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTSampler_test.cpp; sourceTree = "<group>"; };
+		2B9917771A99B5AE00D2D0F4 /* QYTSampler_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTSampler_test.h; sourceTree = "<group>"; };
+		2B9917791A99C82600D2D0F4 /* QYTCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTCamera.cpp; sourceTree = "<group>"; };
+		2B99177A1A99C82600D2D0F4 /* QYTCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTCamera.h; sourceTree = "<group>"; };
+		2B99177C1A99CC0100D2D0F4 /* QYTThinLensCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTThinLensCamera.cpp; sourceTree = "<group>"; };
+		2B99177D1A99CC0100D2D0F4 /* QYTThinLensCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTThinLensCamera.h; sourceTree = "<group>"; };
+		2BA32B551A908D1D00134940 /* qyt_render_ver1.5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qyt_render_ver1.5; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BA32B581A908D1D00134940 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2BA32B5F1A908D3A00134940 /* qytr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qytr.h; sourceTree = "<group>"; };
+		2BA32B601A908D3A00134940 /* QYTError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTError.cpp; sourceTree = "<group>"; };
+		2BA32B611A908D3A00134940 /* QYTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTError.h; sourceTree = "<group>"; };
+		2BD99FE31A959BB4000B701E /* QYTSphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTSphere.cpp; sourceTree = "<group>"; };
+		2BD99FE41A959BB4000B701E /* QYTSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTSphere.h; sourceTree = "<group>"; };
+		2BD99FE71A95CF1D000B701E /* QYTSphere_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTSphere_test.cpp; sourceTree = "<group>"; };
+		2BD99FE81A95CF1D000B701E /* QYTSphere_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTSphere_test.h; sourceTree = "<group>"; };
+		2BD99FEB1A95F685000B701E /* qyt_thread_safe_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qyt_thread_safe_queue.cpp; sourceTree = "<group>"; };
+		2BD99FEC1A95F685000B701E /* qyt_thread_safe_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qyt_thread_safe_queue.h; sourceTree = "<group>"; };
+		2BD99FED1A95F685000B701E /* qyt_join_thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qyt_join_thread.cpp; sourceTree = "<group>"; };
+		2BD99FEE1A95F685000B701E /* qyt_join_thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qyt_join_thread.h; sourceTree = "<group>"; };
+		2BD99FEF1A95F685000B701E /* qyt_function_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qyt_function_wrapper.cpp; sourceTree = "<group>"; };
+		2BD99FF01A95F685000B701E /* qyt_function_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qyt_function_wrapper.h; sourceTree = "<group>"; };
+		2BD99FF11A95F685000B701E /* qyt_work_stealing_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qyt_work_stealing_queue.cpp; sourceTree = "<group>"; };
+		2BD99FF21A95F685000B701E /* qyt_work_stealing_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qyt_work_stealing_queue.h; sourceTree = "<group>"; };
+		2BD99FF31A95F685000B701E /* qyt_thread_pool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qyt_thread_pool.cpp; sourceTree = "<group>"; };
+		2BD99FF41A95F685000B701E /* qyt_thread_pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qyt_thread_pool.h; sourceTree = "<group>"; };
+		2BD99FFB1A961CFC000B701E /* QYTThreadPool_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTThreadPool_test.cpp; sourceTree = "<group>"; };
+		2BD99FFC1A961CFC000B701E /* QYTThreadPool_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTThreadPool_test.h; sourceTree = "<group>"; };
+		2BD9A0011A96327E000B701E /* QYTTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTTimer.cpp; sourceTree = "<group>"; };
+		2BD9A0021A96327E000B701E /* QYTTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTTimer.h; sourceTree = "<group>"; };
+		2BD9A0041A963D34000B701E /* QYTSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTSampler.cpp; sourceTree = "<group>"; };
+		2BD9A0051A963D34000B701E /* QYTSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTSampler.h; sourceTree = "<group>"; };
+		2BE37B5F1A946A98006536C2 /* QYTVector3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTVector3.cpp; sourceTree = "<group>"; };
+		2BE37B601A946A98006536C2 /* QYTVector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTVector3.h; sourceTree = "<group>"; };
+		2BE37B671A948F2C006536C2 /* QYTPoint3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTPoint3.cpp; sourceTree = "<group>"; };
+		2BE37B681A948F2C006536C2 /* QYTPoint3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTPoint3.h; sourceTree = "<group>"; };
+		2BE37B6E1A94B9AB006536C2 /* QYTMatrix4x4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTMatrix4x4.cpp; sourceTree = "<group>"; };
+		2BE37B6F1A94B9AB006536C2 /* QYTMatrix4x4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTMatrix4x4.h; sourceTree = "<group>"; };
+		2BE37B711A94C198006536C2 /* qyt_ray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qyt_ray.cpp; sourceTree = "<group>"; };
+		2BE37B721A94C198006536C2 /* qyt_ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qyt_ray.h; sourceTree = "<group>"; };
+		2BE37B731A94C198006536C2 /* qyt_bbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qyt_bbox.cpp; sourceTree = "<group>"; };
+		2BE37B741A94C198006536C2 /* qyt_bbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qyt_bbox.h; sourceTree = "<group>"; };
+		2BE37B771A94CA1E006536C2 /* QYTTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTTransform.cpp; sourceTree = "<group>"; };
+		2BE37B781A94CA1E006536C2 /* QYTTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTTransform.h; sourceTree = "<group>"; };
+		2BE37B7B1A94CA40006536C2 /* qyt_vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qyt_vector.h; sourceTree = "<group>"; };
+		2BE37B7C1A94CA40006536C2 /* qyt_vector_def.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qyt_vector_def.h; sourceTree = "<group>"; };
+		2BE37B7D1A94CA40006536C2 /* qyt_matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qyt_matrix.h; sourceTree = "<group>"; };
+		2BE37B7E1A94CA40006536C2 /* qyt_matrix_def.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qyt_matrix_def.h; sourceTree = "<group>"; };
+		2BE37B801A94E2DA006536C2 /* transfrom_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = transfrom_test.cpp; sourceTree = "<group>"; };
+		2BE37B811A94E2DA006536C2 /* transfrom_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transfrom_test.h; sourceTree = "<group>"; };
+		2BE37B831A94EB5A006536C2 /* QYTShape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTShape.cpp; sourceTree = "<group>"; };
+		2BE37B841A94EB5A006536C2 /* QYTShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTShape.h; sourceTree = "<group>"; };
+		2BE37B851A94EB5A006536C2 /* QYTDifferentialGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTDifferentialGeometry.cpp; sourceTree = "<group>"; };
+		2BE37B861A94EB5A006536C2 /* QYTDifferentialGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTDifferentialGeometry.h; sourceTree = "<group>"; };
+		2BE869FB1A96E34E0057D5A5 /* QYTMultiJitteredSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTMultiJitteredSampler.cpp; sourceTree = "<group>"; };
+		2BE869FC1A96E34E0057D5A5 /* QYTMultiJitteredSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTMultiJitteredSampler.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BA32B521A908D1D00134940 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B148C051A9EFBAA00BDF4FD /* spectrum */ = {
+			isa = PBXGroup;
+			children = (
+				2B148C021A9EFBA400BDF4FD /* QYTSpectrum.cpp */,
+				2B148C031A9EFBA400BDF4FD /* QYTSpectrum.h */,
+			);
+			name = spectrum;
+			sourceTree = "<group>";
+		};
+		2B99177F1A99CC0500D2D0F4 /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				2B9917791A99C82600D2D0F4 /* QYTCamera.cpp */,
+				2B99177A1A99C82600D2D0F4 /* QYTCamera.h */,
+				2B99177C1A99CC0100D2D0F4 /* QYTThinLensCamera.cpp */,
+				2B99177D1A99CC0100D2D0F4 /* QYTThinLensCamera.h */,
+			);
+			name = camera;
+			sourceTree = "<group>";
+		};
+		2BA32B4C1A908D1D00134940 = {
+			isa = PBXGroup;
+			children = (
+				2BA32B571A908D1D00134940 /* qyt_render_ver1.5 */,
+				2BA32B561A908D1D00134940 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2BA32B561A908D1D00134940 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BA32B551A908D1D00134940 /* qyt_render_ver1.5 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2BA32B571A908D1D00134940 /* qyt_render_ver1.5 */ = {
+			isa = PBXGroup;
+			children = (
+				2BA32B631A908D4100134940 /* fundation */,
+				2BA32B581A908D1D00134940 /* main.cpp */,
+			);
+			path = qyt_render_ver1.5;
+			sourceTree = "<group>";
+		};
+		2BA32B631A908D4100134940 /* fundation */ = {
+			isa = PBXGroup;
+			children = (
+				2BA32B5F1A908D3A00134940 /* qytr.h */,
+				2BA32B601A908D3A00134940 /* QYTError.cpp */,
+				2BA32B611A908D3A00134940 /* QYTError.h */,
+				2BD9A0011A96327E000B701E /* QYTTimer.cpp */,
+				2BD9A0021A96327E000B701E /* QYTTimer.h */,
+				2B99177F1A99CC0500D2D0F4 /* camera */,
+				2BE869FE1A96E3C90057D5A5 /* samplers */,
+				2BD99FFA1A95F68A000B701E /* parallel */,
+				2BD99FE21A958F7B000B701E /* test */,
+				2BE37B7F1A94E161006536C2 /* geomerics */,
+				2BE37B6D1A94B8AB006536C2 /* matrix */,
+				2BE37B6A1A948F32006536C2 /* point */,
+				2BE37B651A946E77006536C2 /* vector */,
+				2B148C051A9EFBAA00BDF4FD /* spectrum */,
+			);
+			name = fundation;
+			sourceTree = "<group>";
+		};
+		2BD99FE21A958F7B000B701E /* test */ = {
+			isa = PBXGroup;
+			children = (
+				2BE37B801A94E2DA006536C2 /* transfrom_test.cpp */,
+				2BE37B811A94E2DA006536C2 /* transfrom_test.h */,
+				2BD99FE71A95CF1D000B701E /* QYTSphere_test.cpp */,
+				2BD99FE81A95CF1D000B701E /* QYTSphere_test.h */,
+				2BD99FFB1A961CFC000B701E /* QYTThreadPool_test.cpp */,
+				2BD99FFC1A961CFC000B701E /* QYTThreadPool_test.h */,
+				2B9917761A99B5AE00D2D0F4 /* QYTSampler_test.cpp */,
+				2B9917771A99B5AE00D2D0F4 /* QYTSampler_test.h */,
+				2B148C071A9F063E00BDF4FD /* QYTSpectrum_test.cpp */,
+				2B148C081A9F063E00BDF4FD /* QYTSpectrum_test.h */,
+			);
+			name = test;
+			sourceTree = "<group>";
+		};
+		2BD99FE61A959BC8000B701E /* shapes */ = {
+			isa = PBXGroup;
+			children = (
+				2BE37B831A94EB5A006536C2 /* QYTShape.cpp */,
+				2BE37B841A94EB5A006536C2 /* QYTShape.h */,
+				2BD99FE31A959BB4000B701E /* QYTSphere.cpp */,
+				2BD99FE41A959BB4000B701E /* QYTSphere.h */,
+			);
+			name = shapes;
+			sourceTree = "<group>";
+		};
+		2BD99FFA1A95F68A000B701E /* parallel */ = {
+			isa = PBXGroup;
+			children = (
+				2BD99FEB1A95F685000B701E /* qyt_thread_safe_queue.cpp */,
+				2BD99FEC1A95F685000B701E /* qyt_thread_safe_queue.h */,
+				2BD99FED1A95F685000B701E /* qyt_join_thread.cpp */,
+				2BD99FEE1A95F685000B701E /* qyt_join_thread.h */,
+				2BD99FEF1A95F685000B701E /* qyt_function_wrapper.cpp */,
+				2BD99FF01A95F685000B701E /* qyt_function_wrapper.h */,
+				2BD99FF11A95F685000B701E /* qyt_work_stealing_queue.cpp */,
+				2BD99FF21A95F685000B701E /* qyt_work_stealing_queue.h */,
+				2BD99FF31A95F685000B701E /* qyt_thread_pool.cpp */,
+				2BD99FF41A95F685000B701E /* qyt_thread_pool.h */,
+			);
+			name = parallel;
+			sourceTree = "<group>";
+		};
+		2BE37B651A946E77006536C2 /* vector */ = {
+			isa = PBXGroup;
+			children = (
+				2BE37B7B1A94CA40006536C2 /* qyt_vector.h */,
+				2BE37B7C1A94CA40006536C2 /* qyt_vector_def.h */,
+				2BE37B5F1A946A98006536C2 /* QYTVector3.cpp */,
+				2BE37B601A946A98006536C2 /* QYTVector3.h */,
+			);
+			name = vector;
+			sourceTree = "<group>";
+		};
+		2BE37B6A1A948F32006536C2 /* point */ = {
+			isa = PBXGroup;
+			children = (
+				2BE37B671A948F2C006536C2 /* QYTPoint3.cpp */,
+				2BE37B681A948F2C006536C2 /* QYTPoint3.h */,
+			);
+			name = point;
+			sourceTree = "<group>";
+		};
+		2BE37B6D1A94B8AB006536C2 /* matrix */ = {
+			isa = PBXGroup;
+			children = (
+				2BE37B6E1A94B9AB006536C2 /* QYTMatrix4x4.cpp */,
+				2BE37B6F1A94B9AB006536C2 /* QYTMatrix4x4.h */,
+				2BE37B7D1A94CA40006536C2 /* qyt_matrix.h */,
+				2BE37B7E1A94CA40006536C2 /* qyt_matrix_def.h */,
+			);
+			name = matrix;
+			sourceTree = "<group>";
+		};
+		2BE37B7F1A94E161006536C2 /* geomerics */ = {
+			isa = PBXGroup;
+			children = (
+				2BE37B771A94CA1E006536C2 /* QYTTransform.cpp */,
+				2BE37B781A94CA1E006536C2 /* QYTTransform.h */,
+				2BE37B711A94C198006536C2 /* qyt_ray.cpp */,
+				2BE37B721A94C198006536C2 /* qyt_ray.h */,
+				2BE37B731A94C198006536C2 /* qyt_bbox.cpp */,
+				2BE37B741A94C198006536C2 /* qyt_bbox.h */,
+				2BD99FE61A959BC8000B701E /* shapes */,
+				2BE37B851A94EB5A006536C2 /* QYTDifferentialGeometry.cpp */,
+				2BE37B861A94EB5A006536C2 /* QYTDifferentialGeometry.h */,
+			);
+			name = geomerics;
+			sourceTree = "<group>";
+		};
+		2BE869FE1A96E3C90057D5A5 /* samplers */ = {
+			isa = PBXGroup;
+			children = (
+				2BD9A0041A963D34000B701E /* QYTSampler.cpp */,
+				2BD9A0051A963D34000B701E /* QYTSampler.h */,
+				2BE869FB1A96E34E0057D5A5 /* QYTMultiJitteredSampler.cpp */,
+				2BE869FC1A96E34E0057D5A5 /* QYTMultiJitteredSampler.h */,
+			);
+			name = samplers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BA32B541A908D1D00134940 /* qyt_render_ver1.5 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BA32B5C1A908D1D00134940 /* Build configuration list for PBXNativeTarget "qyt_render_ver1.5" */;
+			buildPhases = (
+				2BA32B511A908D1D00134940 /* Sources */,
+				2BA32B521A908D1D00134940 /* Frameworks */,
+				2BA32B531A908D1D00134940 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = qyt_render_ver1.5;
+			productName = qyt_render_ver1.5;
+			productReference = 2BA32B551A908D1D00134940 /* qyt_render_ver1.5 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2BA32B4D1A908D1D00134940 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "___JinJiangTiaoZhanBei___";
+				TargetAttributes = {
+					2BA32B541A908D1D00134940 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 2BA32B501A908D1D00134940 /* Build configuration list for PBXProject "qyt_render_ver1.5" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2BA32B4C1A908D1D00134940;
+			productRefGroup = 2BA32B561A908D1D00134940 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BA32B541A908D1D00134940 /* qyt_render_ver1.5 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BA32B511A908D1D00134940 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BE37B871A94EB5A006536C2 /* QYTShape.cpp in Sources */,
+				2BE37B611A946A98006536C2 /* QYTVector3.cpp in Sources */,
+				2BE37B881A94EB5A006536C2 /* QYTDifferentialGeometry.cpp in Sources */,
+				2BA32B591A908D1D00134940 /* main.cpp in Sources */,
+				2BE869FD1A96E34E0057D5A5 /* QYTMultiJitteredSampler.cpp in Sources */,
+				2BA32B621A908D3A00134940 /* QYTError.cpp in Sources */,
+				2BE37B791A94CA1E006536C2 /* QYTTransform.cpp in Sources */,
+				2B99177E1A99CC0100D2D0F4 /* QYTThinLensCamera.cpp in Sources */,
+				2BD9A0061A963D34000B701E /* QYTSampler.cpp in Sources */,
+				2BE37B691A948F2C006536C2 /* QYTPoint3.cpp in Sources */,
+				2BD99FFD1A961CFC000B701E /* QYTThreadPool_test.cpp in Sources */,
+				2BD99FF61A95F685000B701E /* qyt_join_thread.cpp in Sources */,
+				2BD99FE51A959BB4000B701E /* QYTSphere.cpp in Sources */,
+				2B9917781A99B5AE00D2D0F4 /* QYTSampler_test.cpp in Sources */,
+				2BE37B751A94C198006536C2 /* qyt_ray.cpp in Sources */,
+				2B148C041A9EFBA400BDF4FD /* QYTSpectrum.cpp in Sources */,
+				2BE37B821A94E2DA006536C2 /* transfrom_test.cpp in Sources */,
+				2B99177B1A99C82600D2D0F4 /* QYTCamera.cpp in Sources */,
+				2BE37B761A94C198006536C2 /* qyt_bbox.cpp in Sources */,
+				2BD99FF71A95F685000B701E /* qyt_function_wrapper.cpp in Sources */,
+				2BD99FF51A95F685000B701E /* qyt_thread_safe_queue.cpp in Sources */,
+				2BD9A0031A96327E000B701E /* QYTTimer.cpp in Sources */,
+				2BD99FF91A95F685000B701E /* qyt_thread_pool.cpp in Sources */,
+				2BD99FF81A95F685000B701E /* qyt_work_stealing_queue.cpp in Sources */,
+				2B148C091A9F063E00BDF4FD /* QYTSpectrum_test.cpp in Sources */,
+				2BD99FE91A95CF1D000B701E /* QYTSphere_test.cpp in Sources */,
+				2BE37B701A94B9AB006536C2 /* QYTMatrix4x4.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2BA32B5A1A908D1D00134940 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2BA32B5B1A908D1D00134940 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2BA32B5D1A908D1D00134940 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2BA32B5E1A908D1D00134940 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BA32B501A908D1D00134940 /* Build configuration list for PBXProject "qyt_render_ver1.5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BA32B5A1A908D1D00134940 /* Debug */,
+				2BA32B5B1A908D1D00134940 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BA32B5C1A908D1D00134940 /* Build configuration list for PBXNativeTarget "qyt_render_ver1.5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BA32B5D1A908D1D00134940 /* Debug */,
+				2BA32B5E1A908D1D00134940 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BA32B4D1A908D1D00134940 /* Project object */;
+}
