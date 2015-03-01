@@ -10,7 +10,6 @@
 #include "transfrom_test.h"
 #include "QYTSphere_test.h"
 #include "QYTThreadPool_test.h"
-#include "QYTSampler_test.h"
 #include "QYTSpectrum_test.h"
 
 using namespace std;

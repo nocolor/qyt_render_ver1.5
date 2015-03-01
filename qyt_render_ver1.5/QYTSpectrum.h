@@ -239,6 +239,8 @@ namespace QYT
         QYTSampledSpectrum(QYTReal v = 0.f):QYTCoefficientSpectrum<nSpectralSamples>(v){}
         QYTSampledSpectrum(const QYTCoefficientSpectrum<nSpectralSamples>& v):QYTCoefficientSpectrum<nSpectralSamples>(v){}
         
+        QYTSampledSpectrum(const qyt_vec<nSpectralSamples>& v):QYTCoefficientSpectrum<nSpectralSamples>(v){}
+        
         QYTSampledSpectrum(const QYTRGBSpectrum& r, QYTSpectrumType type = QYTSpectrumType::SPECTRUM_REFLECTANCE);
         
         /**
@@ -388,6 +390,7 @@ namespace QYT
         typedef QYTRGBSpectrum RGBSpectrum;
     public:
         QYTRGBSpectrum(QYTReal v = 0.f):QYTCoefficientSpectrum<3>(v){}
+        QYTRGBSpectrum(const qyt_vec<3>& v):QYTCoefficientSpectrum<3>(v){}
         QYTRGBSpectrum(QYTReal r, QYTReal g, QYTReal b)
         {
             this->v[0] = r;

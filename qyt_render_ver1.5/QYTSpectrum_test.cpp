@@ -12,13 +12,11 @@ using namespace QYT;
 
 void QYTSpectrum_test()
 {
-    QYTCoefficientSpectrum<nSpectralSamples> spc;
-    QYTCoefficientSpectrum<nSpectralSamples> spc2(2.0);
+    QYTRGBSpectrum spc(1.f), spc2(3.f);
+    QYTRGBSpectrum res = spc + spc2;
     
+    std::cout << .5f*res;
     
-    spc = Sqrt(spc2);
-    
-    std::cout << spc;
     
     
 
