@@ -16,8 +16,4 @@ void QYTSpectrum_test()
     QYTRGBSpectrum res = spc * spc2;
     
     std::cout << .5f*res;
-    
-    
-    
-
 }
