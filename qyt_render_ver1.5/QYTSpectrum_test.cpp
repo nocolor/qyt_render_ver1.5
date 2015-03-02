@@ -13,7 +13,7 @@ using namespace QYT;
 void QYTSpectrum_test()
 {
     QYTRGBSpectrum spc(1.f), spc2(3.f);
-    QYTRGBSpectrum res = spc * spc2;
+    QYTRGBSpectrum res = spc - spc2;
     
     std::cout << .5f*res;
 }
