@@ -11,7 +11,6 @@
 
 #include "qyt_bbox.h"
 #include "qyt_ray.h"
-#include "QYTVector3.h"
 #include "QYTPoint3.h"
 #include "QYTMatrix4x4.h"
 
@@ -50,6 +49,7 @@ namespace QYT
         QYTMat4 mInv;
     public:
         //构造函数
+        QYTTransform(){}
         QYTTransform(const QYTMat4& transfrom):m(transfrom), mInv(!transfrom){}
         QYTTransform(const QYTMat4& transfrom, const QYTMat4& transfromInv):m(transfrom), mInv(transfromInv)
         {
@@ -124,6 +124,9 @@ namespace QYT
         
         ///对射线执行变换，返回变换后的射线
         QYTRay operator()(const QYTRay& ray) const;
+        
+        ///对微分射线执行变换，返回变换后的微分射线
+        QYTRayDifferential operator()(const QYTRayDifferential& ray) const;
         
         ///对包围盒进行变换，返回变换后的包围盒
         QYTBBox operator()(const QYTBBox& b) const;
@@ -290,6 +293,7 @@ namespace QYT
         
         return QYTTransform(RotateXYZ, ~RotateXYZ);
     }
+
 
 }
 

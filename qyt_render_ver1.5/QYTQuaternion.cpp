@@ -65,7 +65,7 @@ namespace QYT
         }
     }
     
-    QYTQuaternion QYTQuaternion::slrep(QYTReal t, const QYT::QYTQuaternion &q1, const QYT::QYTQuaternion &q2)
+    QYTQuaternion QYTQuaternion::Slerp(QYTReal t, const QYT::QYTQuaternion &q1, const QYT::QYTQuaternion &q2)
     {
         QYTReal cosTheta = QYTQuaternion::Dot(q1, q2);
         if (cosTheta > .9995f)

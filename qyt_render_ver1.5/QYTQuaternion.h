@@ -129,7 +129,9 @@ namespace QYT
         /**
          对q1和q2进行插值运算。
          */
-        static QYTQuaternion slrep(QYTReal t, const QYTQuaternion& q1, const QYTQuaternion& q2);
+        static QYTQuaternion Slerp(QYTReal t,
+                                   const QYTQuaternion& q1,
+                                   const QYTQuaternion& q2);
     };
     
 

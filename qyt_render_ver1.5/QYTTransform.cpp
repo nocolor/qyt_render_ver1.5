@@ -76,6 +76,20 @@ namespace QYT
                       ray.depth);
     }
     
+    QYTRayDifferential QYTTransform::operator()(const QYT::QYTRayDifferential &ray) const
+    {
+        QYTRayDifferential ret((*this)(QYTRay(ray)));
+        ret.hasDifferentials = ray.hasDifferentials;
+        
+        ret.rxOrigin = (*this)(ray.rxOrigin);
+        ret.ryOrigin = (*this)(ray.ryOrigin);
+        ret.rxDirection = (*this)(ray.rxDirection);
+        ret.ryDirection = (*this)(ray.ryDirection);
+        
+        return ret;
+        
+    }
+    
     QYTBBox QYTTransform::operator()(const QYT::QYTBBox &b) const
     {
         const QYTTransform &M = *this;
