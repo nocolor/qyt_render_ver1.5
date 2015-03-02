@@ -64,9 +64,66 @@ namespace QYT
             return os;
             
         }
+        
+        bool hasNaNs() const {
+            return (o.hasNan() || d.hasNan() ||
+                    isnan(min_t) || isnan(max_t));
+        }
     };
     
     typedef qyt_ray QYTRay;
+    
+    
+    /**
+     @classQYTRayDifferential
+     为了更好地利用纹理函数进行反走样，对每条被追踪的光线都保持着一些附加的信息。 
+     这些信息用在QYTTexture类中估算一小部分的场景在图像平面上的投影面积。这样，
+     QYTTexture类就可以计算出纹理在这个面积上的平均值，从而得到更好的图像。
+     
+     QYTRayDifferential是QYTRay的子类，并包含两条辅助光线的附加信息。 这两条
+     光线表示从主光线向x和y方向分别偏置一个像素而得到的相机光线。确定了这三条光线
+     投射到被着色物体上的区域，Texture就可以估算出用于反走样的平均值。
+     */
+    class QYTRayDifferential : public QYTRay
+    {
+    public:
+
+        QYTRayDifferential() { hasDifferentials = false; }
+        QYTRayDifferential(const QYTPoint3 &org, const QYTVector3 &dir, QYTReal start,
+                        QYTReal end = INFINITY, QYTReal t = 0.f, int d = 0)
+        : QYTRay(org, dir, start, end, t, d) {
+            hasDifferentials = false;
+        }
+        QYTRayDifferential(const QYTPoint3 &org, const QYTVector3 &dir, const QYTRay &parent,
+                        QYTReal start, QYTReal end = INFINITY)
+        : QYTRay(org, dir, start, end, parent.time, parent.depth+1) {
+            hasDifferentials = false;
+        }
+        explicit QYTRayDifferential(const QYTRay &ray) : QYTRay(ray) {
+            hasDifferentials = false;
+        }
+        bool hasNaNs() const {
+            return QYTRay::hasNaNs() ||
+            (hasDifferentials && (rxOrigin.hasNan() || ryOrigin.hasNan() ||
+                                  rxDirection.hasNan() || ryDirection.hasNan()));
+        }
+        void ScaleDifferentials(float s) {
+            rxOrigin = o + (rxOrigin - o) * s;
+            ryOrigin = o + (ryOrigin - o) * s;
+            rxDirection = d + (rxDirection - d) * s;
+            ryDirection = d + (ryDirection - d) * s;
+        }
+        
+
+        ///如果该值为true，则表示当前光线有两条附加的辅助光线，为false则表示没有
+        bool hasDifferentials;
+        
+        ///附加光线的两个源点
+        QYTPoint3 rxOrigin, ryOrigin;
+        
+        ///附加光线的两个方向
+        QYTVector3 rxDirection, ryDirection;
+    };
 }
 
 #endif /* defined(__qyt_fundation__qyt_ray__) */

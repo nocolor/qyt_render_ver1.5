@@ -10,6 +10,7 @@
 		2B148C041A9EFBA400BDF4FD /* QYTSpectrum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B148C021A9EFBA400BDF4FD /* QYTSpectrum.cpp */; };
 		2B148C091A9F063E00BDF4FD /* QYTSpectrum_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B148C071A9F063E00BDF4FD /* QYTSpectrum_test.cpp */; };
 		2B468FEF1AA32E19004C25EE /* QYTSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B468FED1AA32E19004C25EE /* QYTSampler.cpp */; };
+		2B468FF21AA42150004C25EE /* QYTQuaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B468FF01AA42150004C25EE /* QYTQuaternion.cpp */; };
 		2BA32B591A908D1D00134940 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BA32B581A908D1D00134940 /* main.cpp */; };
 		2BA32B621A908D3A00134940 /* QYTError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BA32B601A908D3A00134940 /* QYTError.cpp */; };
 		2BD99FE51A959BB4000B701E /* QYTSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD99FE31A959BB4000B701E /* QYTSphere.cpp */; };
@@ -51,6 +52,8 @@
 		2B148C081A9F063E00BDF4FD /* QYTSpectrum_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTSpectrum_test.h; sourceTree = "<group>"; };
 		2B468FED1AA32E19004C25EE /* QYTSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTSampler.cpp; sourceTree = "<group>"; };
 		2B468FEE1AA32E19004C25EE /* QYTSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTSampler.h; sourceTree = "<group>"; };
+		2B468FF01AA42150004C25EE /* QYTQuaternion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTQuaternion.cpp; sourceTree = "<group>"; };
+		2B468FF11AA42150004C25EE /* QYTQuaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTQuaternion.h; sourceTree = "<group>"; };
 		2BA32B551A908D1D00134940 /* qyt_render_ver1.5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qyt_render_ver1.5; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA32B581A908D1D00134940 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2BA32B5F1A908D3A00134940 /* qytr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qytr.h; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 			children = (
 				2BE37B771A94CA1E006536C2 /* QYTTransform.cpp */,
 				2BE37B781A94CA1E006536C2 /* QYTTransform.h */,
+				2B468FF01AA42150004C25EE /* QYTQuaternion.cpp */,
+				2B468FF11AA42150004C25EE /* QYTQuaternion.h */,
 				2BE37B711A94C198006536C2 /* qyt_ray.cpp */,
 				2BE37B721A94C198006536C2 /* qyt_ray.h */,
 				2BE37B731A94C198006536C2 /* qyt_bbox.cpp */,
@@ -340,6 +345,7 @@
 				2BE37B751A94C198006536C2 /* qyt_ray.cpp in Sources */,
 				2B148C041A9EFBA400BDF4FD /* QYTSpectrum.cpp in Sources */,
 				2BE37B821A94E2DA006536C2 /* transfrom_test.cpp in Sources */,
+				2B468FF21AA42150004C25EE /* QYTQuaternion.cpp in Sources */,
 				2BE37B761A94C198006536C2 /* qyt_bbox.cpp in Sources */,
 				2BD99FF71A95F685000B701E /* qyt_function_wrapper.cpp in Sources */,
 				2BD99FF51A95F685000B701E /* qyt_thread_safe_queue.cpp in Sources */,
