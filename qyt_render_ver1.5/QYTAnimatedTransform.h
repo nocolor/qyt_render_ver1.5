@@ -15,9 +15,12 @@ namespace QYT
 {
     /**
      @class QYTAnimatedTransform
-     一组关键帧矩阵变换的集合，提供一系列关键帧变换(keyframe transformation)，
+     关键帧矩阵变换的，提供一系列关键帧变换(keyframe transformation)，
      每一个变换与某个时间点相关联。这样就运行移动相机，或者让场景中的物体在相机的快
      门开启和关闭这段时间中移动。
+     每一个QYTAnimatedTransform对象代表从某个开始时间的变换状态到结束时间的变换
+     状态之间的某一个状态，这个状态取决于传入的时间参数，当传入一个时间参数之后，就
+     可以通过QYTAnimatedTransform获取由插值计算得到的那个状态的确切变换状态。
      */
     class QYTAnimatedTransform
     {
