@@ -10,7 +10,7 @@
 #define __qyt_render_ver1_5__QYTSampler__
 
 #include "QYTSpectrum.h"
-#include <random>
+#include "QYTRNG.h"
 
 namespace QYT
 {
@@ -61,8 +61,7 @@ namespace QYT
          @return    如果真实产生了采样点，就返回采样点的数目，否则返回0
          */
         virtual int getMoreSamples(QYTSample *sample,
-                                   const std::uniform_real_distribution<QYTReal>& distributions,
-                                   const std::default_random_engine& generator)=0;
+                                   const QYTRNG& rng)=0;
         
         ///返回一次性产生的采样点数量的最大值。
         virtual int maximumSampleCount() = 0;
@@ -183,6 +182,29 @@ namespace QYT
          */
         QYTSample* copy(int count) const;
     };
+    
+    void QYTStratifiedSample2D(float *samp, int nx, int ny,
+                               const QYTRNG& rng,
+                               bool jitter);
+    
+    void QYTStratifiedSample1D(float *samp, int nSamples,
+                               const QYTRNG& rng,
+                               bool jitter);
+    
+    template <typename T>
+    void QYTShuffle(T *samp, uint32_t count, uint32_t dims,
+                    const QYTRNG& rng)
+    {
+        for (uint32_t i = 0; i < count; ++i)
+        {
+            uint32_t other = i + (rng.randomUInt(0, RAND_MAX) % (count - i));
+            for (uint32_t j = 0; j < dims; ++j)
+                swap(samp[dims*i + j], samp[dims*other + j]);
+        }
+    }
+    
+    void QYTLatinHypercube(float *samples, uint32_t nSamples, uint32_t nDim,
+                           const QYTRNG &rng);
     
 }
 

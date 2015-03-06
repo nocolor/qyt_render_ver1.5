@@ -113,6 +113,7 @@ typedef unsigned __int64 uint64_t;
 namespace QYT
 {
     const float 	invRAND_MAX = 1.0 / (float)RAND_MAX;
+    static const float OneMinusEpsilon=0x1.fffffep-1;
     
     ///代表实数的类型
     typedef float QYTReal;
@@ -231,6 +232,7 @@ namespace QYT
         return QYTFloor2Int(QYTLog2(v));
     }
     
+    ///计算参数的下限，并返回（int）
     inline int QYTFloor2Int(float val) {
         return (int)floorf(val);
     }
@@ -245,7 +247,7 @@ namespace QYT
         return (int)val;
     }
     
-    
+    ///返回大于或者等于指定表达式的最小整数(int)
     inline int QYTCeil2Int(float val) {
         return (int)ceilf(val);
     }

@@ -10,6 +10,16 @@
 
 namespace QYT
 {
+    QYTSampler::QYTSampler(int xstart, int xend, int ystart, int yend,
+                           int spp, QYTReal sopen, QYTReal sclose):
+                xPixelStart(xstart), xPixelEnd(xend), yPixelStart(ystart),
+                yPixelEnd(yend), samplesPerPixel(spp), shutterOpen(sopen),
+                shutterClose(sclose)
+    { }
+    
+    QYTSampler::~QYTSampler()
+    {}
+    
     void QYTSampler::computeSubWindow(int num, int count, int *xstart, int *xend, int *ystart, int *yend) const
     {
         // Determine how many tiles to use in each dimension, _nx_ and _ny_
@@ -79,4 +89,53 @@ namespace QYT
         }
         return ret;
     }
+    
+    void QYTStratifiedSample2D(float *samp, int nx, int ny,
+                               const QYTRNG& rng,
+                               bool jitter)
+    {
+        float dx = 1.f / nx, dy = 1.f / ny;
+        
+        for (int y = 0; y < ny; ++y)
+        {
+            for (int x = 0; x < nx; ++x)
+            {
+                float jx = jitter ? rng.randomFloat(0.f, 1.f) : 0.5f;
+                float jy = jitter ? rng.randomFloat(0.f, 1.f) : 0.5f;
+                *samp++ = std::min((x + jx) * dx, OneMinusEpsilon);
+                *samp++ = std::min((y + jy) * dy, OneMinusEpsilon);
+            }
+        }
+    }
+    
+    void QYTStratifiedSample1D(float *samp, int nSamples,
+                               const QYTRNG& rng,
+                               bool jitter)
+    {
+        float invTot = 1.f / nSamples;
+        for (int i = 0;  i < nSamples; ++i) {
+            float delta = jitter ? rng.randomFloat(0.f, 1.f) : 0.5f;
+            *samp++ = std::min((i + delta) * invTot, OneMinusEpsilon);
+        }
+    }
+    
+    void QYTLatinHypercube(float *samples, uint32_t nSamples, uint32_t nDim,
+                           const QYTRNG &rng)
+    {
+        // Generate LHS samples along diagonal
+        float delta = 1.f / nSamples;
+        for (uint32_t i = 0; i < nSamples; ++i)
+            for (uint32_t j = 0; j < nDim; ++j)
+                samples[nDim * i + j] = std::min((i + (rng.randomFloat(0.f, 1.f))) * delta,
+                                            OneMinusEpsilon);
+        
+        // Permute LHS samples in each dimension
+        for (uint32_t i = 0; i < nDim; ++i) {
+            for (uint32_t j = 0; j < nSamples; ++j) {
+                uint32_t other = j + (rng.randomUInt(0, RAND_MAX) % (nSamples - j));
+                std::swap(samples[nDim * j + i], samples[nDim * other + i]);
+            }
+        }
+    }
+    
 }

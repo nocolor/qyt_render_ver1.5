@@ -26,11 +26,23 @@ namespace QYT
         ///滤波器
         QYTFilter* filter;
         
-        ///裁剪窗口
+        /**
+         裁剪窗口，定义在NDC空间中。前两个数代表左上角，后两个代表右下角。
+         @note
+         正规化设备空间(Normalized device coordinate, NDC)：
+         这是图像渲染所用的坐标系。在x,y平面上，其空间范围是从(0,0)
+         到(1,1)，并且(0,0)对应于图像的左上角。深度值z跟屏幕空间中的
+         值相同。从屏幕空间到NDC空间是一个简单的线性变换。
+         */
         float cropWindow[4];
         
         ///文件名
         std::string filename;
+        
+        /**
+         xPixelStart和yPixelStart存放裁剪窗口的左上角的坐标位置，
+         xPixelCount和yPixelCount分别给出了在各个方向的像素总数。
+         */
         int xPixelStart, yPixelStart, xPixelCount, yPixelCount;
         
         ///代表像素的结构，图像中每个像素对应一个这样的结构
@@ -74,30 +86,32 @@ namespace QYT
     public:
         /**
          构造函数接受很多额外的参数。
+
+         
          @param xres    x方向的分辨率
          @param yres    y方向的分辨率
          @param filt    滤波器
          @param crop    一个裁剪窗口（即一个位于[0,1]x[0,1]区域内的矩形）
          @param filename    输出图像文件名
          */
-        QYTImageFilm(int xres, int yres, QYTFilter *filt, const float crop[4],
-                     const std::string &filename);
-        
-
-        void addSample(const QYTCameraSample &sample,
-                               const QYTSpectrum &L) = 0;
-
-        void splat(const QYTCameraSample &sample, const QYTSpectrum &L) override;
-        
-        void getSampleExtent(int *xstart, int *xend,
-                            int *ystart, int *yend) const override;
-
-        void getPixelExtent(int *xstart, int *xend,
-                            int *ystart, int *yend) const override;
-        
-        void writeImage(float splatScale = 1.f) override;
-        
-        void updateDisplay(int x0, int y0, int x1, int y1, float splatScale) override;
+//        QYTImageFilm(int xres, int yres, QYTFilter *filt, const float crop[4],
+//                     const std::string &filename);
+//        
+//
+//        void addSample(const QYTCameraSample &sample,
+//                               const QYTSpectrum &L) = 0;
+//
+//        void splat(const QYTCameraSample &sample, const QYTSpectrum &L) override;
+//        
+//        void getSampleExtent(int *xstart, int *xend,
+//                            int *ystart, int *yend) const override;
+//
+//        void getPixelExtent(int *xstart, int *xend,
+//                            int *ystart, int *yend) const override;
+//        
+//        void writeImage(float splatScale = 1.f) override;
+//        
+//        void updateDisplay(int x0, int y0, int x1, int y1, float splatScale) override;
     };
 }
 
