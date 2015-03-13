@@ -55,17 +55,15 @@ namespace QYT
         
         /**
          产生一个或者多个采样点数组。这些数组中的值取决于需求。
-         @param sample            设置了具体参数的采样器指针
-         @param distributions     分布器，能够把generator产生的均匀分布值映射到其他常见分布，如均匀分布uniform，正态分布normal，二项分布binomial，泊松分布poisson
-         @param generator         生成器，能够产生离散的等可能分布数值，
-         @return    如果真实产生了采样点，就返回采样点的数目，否则返回0
+         @param sample  设置了具体参数的采样器指针
+         @param rng     随机数对象
+         @return        如果真实产生了采样点，就返回采样点的数目，否则返回0
          */
         virtual int getMoreSamples(QYTSample *sample,
                                    const QYTRNG& rng)=0;
         
         ///返回一次性产生的采样点数量的最大值。
         virtual int maximumSampleCount() = 0;
-        
 //        virtual bool reportResults(QYTSampler *samples, const RayDifferential *rays,
 //                                   const Spectrum *Ls, const Intersection *isects, int count);
         
@@ -205,6 +203,9 @@ namespace QYT
     
     void QYTLatinHypercube(float *samples, uint32_t nSamples, uint32_t nDim,
                            const QYTRNG &rng);
+    
+    ///将u1，u2映射到同心圆盘上，以dx，dy输出
+    void QYTConcentricSampleDisk(float u1, float u2, float *dx, float *dy);
     
 }
 

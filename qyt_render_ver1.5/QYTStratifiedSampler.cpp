@@ -68,7 +68,8 @@ namespace QYT
             imageSamples[o+1] += yPos;
         }
         
-        for (int i = 0; i < nSamples; ++i) {
+        for (int i = 0; i < nSamples; ++i)
+        {
             samples[i].imageX = imageSamples[2*i];
             samples[i].imageY = imageSamples[2*i+1];
             samples[i].lensU = lensSamples[2*i];

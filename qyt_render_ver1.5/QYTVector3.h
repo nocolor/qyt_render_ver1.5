@@ -31,7 +31,7 @@ namespace QYT
         QYTVector3():x(0.f),y(0.f),z(0.f){}
         QYTVector3(QYTReal _val):x(_val),y(_val),z(_val){Assert(!hasNan());}
         QYTVector3(QYTReal _x, QYTReal _y, QYTReal _z):x(_x),y(_y),z(_z){Assert(!hasNan());}
-        inline explicit QYTVector3(const QYTPoint3& _p);
+        explicit QYTVector3(const QYTPoint3& _p);
         
         //复制构造函数
         QYTVector3(const QYTVector3& _v):x(_v.x),y(_v.y),z(_v.z){Assert(!hasNan());}

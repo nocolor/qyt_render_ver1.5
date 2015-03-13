@@ -25,7 +25,6 @@ namespace QYT
     {
     protected:
         qyt_vector<Type, col> m[row];
-//        Type m[row][col];
         
     public:
         qyt_matrix(){}

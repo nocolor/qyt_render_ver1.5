@@ -7,10 +7,7 @@
 //
 
 #include <iostream>
-#include "transfrom_test.h"
-#include "QYTSphere_test.h"
-#include "QYTThreadPool_test.h"
-#include "QYTSpectrum_test.h"
+#include "QYTTest.h"
 
 using namespace std;
 
@@ -18,12 +15,8 @@ int main(int argc, const char * argv[]) {
     
     cout << "light core render Ver:" << QYTR_VERSION << endl;
     
-//    transform_test();
-//    QYTSphere_test();
-
-//    QYTThreadPool_test();
-//    QYTMultiJitteredSampler_test();
-    QYTSpectrum_test();
+//    QYTStratifiedSampler_test();
+    QYTImageFilm_test();
     
     return 0;
 }

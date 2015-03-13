@@ -293,6 +293,17 @@ namespace QYT
         
         return QYTTransform(RotateXYZ, ~RotateXYZ);
     }
+    
+    inline QYTTransform QYTPerspective(float fov, float n, float f)
+    {
+        QYTMat4 persp = QYTMat4(1, 0,           0,              0,
+                                0, 1,           0,              0,
+                                0, 0, f / (f - n), -f*n / (f - n),
+                                0, 0,           1,              0);
+        
+        float invTanAng = 1.f / tanf(QYTRadians(fov) / 2.f);
+        return QYTScale(invTanAng, invTanAng, 1) * QYTTransform(persp);
+    }
 
 
 }

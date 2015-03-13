@@ -86,7 +86,6 @@ namespace QYT
     public:
         /**
          构造函数接受很多额外的参数。
-
          
          @param xres    x方向的分辨率
          @param yres    y方向的分辨率
@@ -94,24 +93,24 @@ namespace QYT
          @param crop    一个裁剪窗口（即一个位于[0,1]x[0,1]区域内的矩形）
          @param filename    输出图像文件名
          */
-//        QYTImageFilm(int xres, int yres, QYTFilter *filt, const float crop[4],
-//                     const std::string &filename);
-//        
-//
-//        void addSample(const QYTCameraSample &sample,
-//                               const QYTSpectrum &L) = 0;
-//
-//        void splat(const QYTCameraSample &sample, const QYTSpectrum &L) override;
-//        
-//        void getSampleExtent(int *xstart, int *xend,
-//                            int *ystart, int *yend) const override;
-//
-//        void getPixelExtent(int *xstart, int *xend,
-//                            int *ystart, int *yend) const override;
-//        
-//        void writeImage(float splatScale = 1.f) override;
-//        
-//        void updateDisplay(int x0, int y0, int x1, int y1, float splatScale) override;
+        QYTImageFilm(int xres, int yres, QYTFilter *filt, const float crop[4],
+                     const std::string &filename);
+        
+
+        void addSample(const QYTCameraSample &sample,
+                               const QYTSpectrum &L) override;
+
+        void splat(const QYTCameraSample &sample, const QYTSpectrum &L) override;
+        
+        void getSampleExtent(int *xstart, int *xend,
+                            int *ystart, int *yend) const override;
+
+        void getPixelExtent(int *xstart, int *xend,
+                            int *ystart, int *yend) const override;
+        
+        void writeImage(float splatScale = 1.f) override;
+        
+        void updateDisplay(int x0, int y0, int x1, int y1, float splatScale) override;
     };
 }
 
