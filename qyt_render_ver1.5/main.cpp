@@ -7,16 +7,29 @@
 //
 
 #include <iostream>
+#include "QYTBoxFilter.h"
+#include "QYTSphere.h"
+#include "QYTPerspectiveCamera.h"
+#include "QYTAnimatedTransform.h"
+#include "QYTRNG.h"
+#include "QYTImageFilm.h"
+#include "QYTStratifiedSampler.h"
+
 #include "QYTTest.h"
 
 using namespace std;
+using namespace QYT;
 
-int main(int argc, const char * argv[]) {
+
+
+int main(int argc, const char * argv[])
+{
     
     cout << "light core render Ver:" << QYTR_VERSION << endl;
     
-//    QYTStratifiedSampler_test();
-    QYTImageFilm_test();
+//    QYTImageFilm_test();
     
+    QYTRender_ver_1_5_test();
+
     return 0;
 }
