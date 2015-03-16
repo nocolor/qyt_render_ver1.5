@@ -1,4 +1,4 @@
-﻿//
+//
 //  main.cpp
 //  qyt_render_ver1.5
 //
@@ -7,22 +7,14 @@
 //
 
 #include <iostream>
-#include "QYTBoxFilter.h"
-#include "QYTSphere.h"
-#include "QYTPerspectiveCamera.h"
-#include "QYTAnimatedTransform.h"
-#include "QYTRNG.h"
-#include "QYTImageFilm.h"
-#include "QYTStratifiedSampler.h"
+
 
 #include "QYTTest.h"
 
 using namespace std;
 using namespace QYT;
 
-//测试一下gitHub同步
 
-//再次熟悉gitHub
 
 int main(int argc, const char * argv[])
 {
@@ -31,8 +23,7 @@ int main(int argc, const char * argv[])
     
 //    QYTImageFilm_test();
     
-//    QYTRender_ver_1_5_test();
-    QYTCamera_test();
+
 
     return 0;
 }

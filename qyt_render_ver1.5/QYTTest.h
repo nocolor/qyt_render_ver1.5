@@ -14,8 +14,6 @@
 
 void QYTStratifiedSampler_test();
 void QYTImageFilm_test();
-void QYTCamera_test();
-
 
 ///测试图像管线、采样器、相机、线程池、基础图元
 int QYTRender_ver_1_5_test();

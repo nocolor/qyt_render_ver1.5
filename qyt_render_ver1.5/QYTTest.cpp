@@ -107,20 +107,6 @@ void QYTImageFilm_test()
     film.writeImage();
 }
 
-void QYTCamera_test()
-{
-    QYTPoint3 p(1, 0, 100);
-    QYTTransform world2camera = QYTLookAt(QYTPoint3(1, 0, 0),
-                                          QYTPoint3(1, 0, 100),
-                                          QYTVec3(0, 1, 0));
-    
-    std::cout << (world2camera)(p);
-    
-//    QYTVec3 a(1, 0, 0), b(0, 1, 0);
-//    std::cout << QYTVec3::Cross(a, b);
-}
-
-
 ///测试图像管线、采样器、相机、线程池、基础图元
 int QYTRender_ver_1_5_test()
 {
@@ -143,13 +129,13 @@ int QYTRender_ver_1_5_test()
     
     //设置相机开始的位置
     std::shared_ptr<QYTTransform> cameraStart =
-    std::make_shared<QYTTransform>(!QYTLookAt(QYTPoint3(0, 0, 400),
+    std::make_shared<QYTTransform>(QYTLookAt(QYTPoint3(0, 0, 400),
                                               QYTPoint3(0, 0, 0),
                                               QYTVec3(0, 1, 0)));
     
     //设置相机结束的位置
     std::shared_ptr<QYTTransform> cameraEnd =
-    std::make_shared<QYTTransform>(!QYTLookAt(QYTPoint3(100, 0, 400),
+    std::make_shared<QYTTransform>(QYTLookAt(QYTPoint3(0, 0, 400),
                                               QYTPoint3(0, 0, 0),
                                               QYTVec3(0, 1, 0)));
     
@@ -221,7 +207,7 @@ int QYTRender_ver_1_5_test()
                 
                 if(isIntersect)
                 {
-                    film->addSample(cameraSample[i], cameraRayWight*QYTSpectrum(0, 1, 0));
+                    film->addSample(cameraSample[i], cameraRayWight*QYTSpectrum(1, 0, 0));
                 }
 
             }
