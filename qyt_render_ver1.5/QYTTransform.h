@@ -53,7 +53,10 @@ namespace QYT
         QYTTransform(const QYTMat4& transfrom):m(transfrom), mInv(!transfrom){}
         QYTTransform(const QYTMat4& transfrom, const QYTMat4& transfromInv):m(transfrom), mInv(transfromInv)
         {
-
+#ifndef NDEBUG
+            if(!(m*mInv).isIdentity())
+                QYTWarning("Matrixes may not be normal affine transfrom.");
+#endif
         }
         //对象的复制和赋值可以直接依赖QYTMat4的实现，因此不需要特殊的复制构造函数以及赋值操作
         
@@ -106,7 +109,10 @@ namespace QYT
         {
             m = t;
             mInv = tInv;
-
+#ifndef NDEBUG
+            if(!(m*mInv).isIdentity())
+                QYTWarning("Matrixes may not be normal affine transfrom.");
+#endif
         }
         
         ///对向量执行变换，返回变换后的向量
@@ -286,37 +292,6 @@ namespace QYT
                           0,0,0,1);
         
         return QYTTransform(RotateXYZ, ~RotateXYZ);
-    }
-    
-    inline QYTTransform QYTLookAt(const QYTPoint3& pos,
-                                  const QYTPoint3& look,
-                                  const QYTVec3& up)
-    {
-        float m[4][4];
-        // Initialize fourth column of viewing matrix
-        m[0][3] = pos.x;
-        m[1][3] = pos.y;
-        m[2][3] = pos.z;
-        m[3][3] = 1;
-        
-        // Initialize first three columns of viewing matrix
-        QYTVec3 dir = QYTVec3::Normalize(look - pos);
-        QYTVec3 left = QYTVec3::Normalize(QYTVec3::Cross(QYTVec3::Normalize(up), dir));
-        QYTVec3 newUp = QYTVec3::Cross(dir, left);
-        m[0][0] = left.x;
-        m[1][0] = left.y;
-        m[2][0] = left.z;
-        m[3][0] = 0.;
-        m[0][1] = newUp.x;
-        m[1][1] = newUp.y;
-        m[2][1] = newUp.z;
-        m[3][1] = 0.;
-        m[0][2] = dir.x;
-        m[1][2] = dir.y;
-        m[2][2] = dir.z;
-        m[3][2] = 0.;
-        QYTMat4 camToWorld(m);
-        return QYTTransform(!camToWorld, camToWorld);
     }
     
     inline QYTTransform QYTPerspective(float fov, float n, float f)

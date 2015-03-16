@@ -66,9 +66,6 @@ namespace QYT
         {
             imageSamples[o]   += xPos;
             imageSamples[o+1] += yPos;
-            
-//            std::cout << "##" << imageSamples[o] << ", " << imageSamples[o+1] << "##\n";
-            
         }
         
         for (int i = 0; i < nSamples; ++i)
@@ -86,8 +83,7 @@ namespace QYT
         }
         
         // Advance to next pixel for stratified sampling
-        if (++xPos == xPixelEnd)
-        {
+        if (++xPos == xPixelEnd) {
             xPos = xPixelStart;
             ++yPos;
         }

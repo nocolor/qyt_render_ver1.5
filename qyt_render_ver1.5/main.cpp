@@ -7,17 +7,10 @@
 //
 
 #include <iostream>
-#include "QYTBoxFilter.h"
-#include "QYTSphere.h"
-#include "QYTPerspectiveCamera.h"
-#include "QYTAnimatedTransform.h"
-#include "QYTRNG.h"
-#include "QYTImageFilm.h"
-#include "QYTStratifiedSampler.h"
-
 #include "QYTTest.h"
 
 using namespace std;
+<<<<<<< HEAD
 using namespace QYT;
 
 //测试一下gitHub同步
@@ -26,13 +19,21 @@ using namespace QYT;
 
 int main(int argc, const char * argv[])
 {
+=======
+
+int main(int argc, const char * argv[]) {
+>>>>>>> parent of e9f0f1b... 对现行版本的组件进行了功能和可行性测试
     
     cout << "light core render Ver:" << QYTR_VERSION << endl;
     
-//    QYTImageFilm_test();
+//    QYTStratifiedSampler_test();
+    QYTImageFilm_test();
     
+<<<<<<< HEAD
 //    QYTRender_ver_1_5_test();
     QYTCamera_test();
 
+=======
+>>>>>>> parent of e9f0f1b... 对现行版本的组件进行了功能和可行性测试
     return 0;
 }
