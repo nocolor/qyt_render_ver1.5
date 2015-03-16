@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "qyt_render_ver1.5/QYTStratifiedSampler.cpp"
-            timestampString = "447316562.039745"
+            filePath = "qyt_render_ver1.5/QYTImageFilm.cpp"
+            timestampString = "447934980.482516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "QYTStratifiedSampler::getMoreSamples(QYT::QYTSample *samples, const QYT::QYTRNG &amp;rng)"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "QYTImageFilm::addSample(const QYT::QYTCameraSample &amp;sample, const QYTSpectrum &amp;L)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,7 +25,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-<<<<<<< HEAD
             filePath = "qyt_render_ver1.5/QYTTest.cpp"
             timestampString = "447994718.770012"
             startingColumnNumber = "9223372036854775807"
@@ -50,16 +49,6 @@
             endingLineNumber = "303"
             landmarkName = "QYTLookAt(const QYTPoint3&amp; pos, const QYTPoint3&amp; look, const QYTVec3&amp; up)"
             landmarkType = "7">
-=======
-            filePath = "qyt_render_ver1.5/QYTImageFilm.cpp"
-            timestampString = "447918870.369955"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "QYTImageFilm::QYTImageFilm(int xres, int yres, QYTFilter *filt, const float crop[4], const std::string &amp;fn)"
-            landmarkType = "5">
->>>>>>> parent of e9f0f1b... 对现行版本的组件进行了功能和可行性测试
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
