@@ -22,6 +22,7 @@
 		2B588F8D1AA962CA004A0EA4 /* QYTStratifiedSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B588F8B1AA962CA004A0EA4 /* QYTStratifiedSampler.cpp */; };
 		2B588FA91AA977FC004A0EA4 /* QYTRNG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B588FA71AA977FC004A0EA4 /* QYTRNG.cpp */; };
 		2B588FAC1AA97ED2004A0EA4 /* QYTTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B588FAA1AA97ED2004A0EA4 /* QYTTest.cpp */; };
+		2B61047F1AB45670003512A1 /* QYTReflection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B61047D1AB45670003512A1 /* QYTReflection.cpp */; };
 		2BA32B591A908D1D00134940 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BA32B581A908D1D00134940 /* main.cpp */; };
 		2BA32B621A908D3A00134940 /* QYTError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BA32B601A908D3A00134940 /* QYTError.cpp */; };
 		2BD99FE51A959BB4000B701E /* QYTSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BD99FE31A959BB4000B701E /* QYTSphere.cpp */; };
@@ -87,6 +88,8 @@
 		2B588FA81AA977FC004A0EA4 /* QYTRNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTRNG.h; sourceTree = "<group>"; };
 		2B588FAA1AA97ED2004A0EA4 /* QYTTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTTest.cpp; sourceTree = "<group>"; };
 		2B588FAB1AA97ED2004A0EA4 /* QYTTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTTest.h; sourceTree = "<group>"; };
+		2B61047D1AB45670003512A1 /* QYTReflection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTReflection.cpp; sourceTree = "<group>"; };
+		2B61047E1AB45670003512A1 /* QYTReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTReflection.h; sourceTree = "<group>"; };
 		2BA32B551A908D1D00134940 /* qyt_render_ver1.5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qyt_render_ver1.5; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA32B581A908D1D00134940 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2BA32B5F1A908D3A00134940 /* qytr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qytr.h; sourceTree = "<group>"; };
@@ -178,6 +181,15 @@
 			name = filter;
 			sourceTree = "<group>";
 		};
+		2B6104801AB45678003512A1 /* BxDF */ = {
+			isa = PBXGroup;
+			children = (
+				2B61047D1AB45670003512A1 /* QYTReflection.cpp */,
+				2B61047E1AB45670003512A1 /* QYTReflection.h */,
+			);
+			name = BxDF;
+			sourceTree = "<group>";
+		};
 		2B99177F1A99CC0500D2D0F4 /* camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +247,7 @@
 				2BE37B6A1A948F32006536C2 /* point */,
 				2BE37B651A946E77006536C2 /* vector */,
 				2B148C051A9EFBAA00BDF4FD /* spectrum */,
+				2B6104801AB45678003512A1 /* BxDF */,
 			);
 			name = fundation;
 			sourceTree = "<group>";
@@ -417,6 +430,7 @@
 				2B148C041A9EFBA400BDF4FD /* QYTSpectrum.cpp in Sources */,
 				2B468FFC1AA47299004C25EE /* QYTFilter.cpp in Sources */,
 				2B4690001AA4B59C004C25EE /* QYTBoxFilter.cpp in Sources */,
+				2B61047F1AB45670003512A1 /* QYTReflection.cpp in Sources */,
 				2B468FF51AA44ECD004C25EE /* QYTAnimatedTransform.cpp in Sources */,
 				2B588F8D1AA962CA004A0EA4 /* QYTStratifiedSampler.cpp in Sources */,
 				2BE37B821A94E2DA006536C2 /* transfrom_test.cpp in Sources */,

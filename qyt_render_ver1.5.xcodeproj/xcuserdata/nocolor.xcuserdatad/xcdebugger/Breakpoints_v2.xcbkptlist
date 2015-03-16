@@ -22,16 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qyt_render_ver1.5/QYTTest.cpp"
-            timestampString = "447944072.971456"
+            timestampString = "447994718.770012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "QYTImageFilm_test()"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "QYTRender_ver_1_5_test()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "qyt_render_ver1.5/QYTTest.cpp"
-            timestampString = "447948953.320169"
+            filePath = "qyt_render_ver1.5/QYTTransform.h"
+            timestampString = "448025420.421141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "QYTRender_ver_1_5_test()"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "QYTLookAt(const QYTPoint3&amp; pos, const QYTPoint3&amp; look, const QYTVec3&amp; up)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

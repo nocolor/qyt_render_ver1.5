@@ -29,7 +29,8 @@ int main(int argc, const char * argv[])
     
 //    QYTImageFilm_test();
     
-    QYTRender_ver_1_5_test();
+//    QYTRender_ver_1_5_test();
+    QYTCamera_test();
 
     return 0;
 }
