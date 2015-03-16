@@ -17,7 +17,5 @@ void QYTImageFilm_test();
 void QYTCamera_test();
 
 
-///测试图像管线、采样器、相机、线程池、基础图元
-int QYTRender_ver_1_5_test();
 
 #endif /* defined(__qyt_render_ver1_5__QYTTest__) */

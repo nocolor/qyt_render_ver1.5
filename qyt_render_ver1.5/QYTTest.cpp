@@ -8,105 +8,56 @@
 
 #include "QYTTest.h"
 #include "QYTBoxFilter.h"
-
-#include "QYTSphere.h"
-#include "QYTPerspectiveCamera.h"
-#include "QYTAnimatedTransform.h"
-#include "QYTRNG.h"
-
 using namespace QYT;
-const int imageWight = 400, imageHight = 400;
-const int stratifX = 2, stratifY = 2;
-const int samplesPerPixel = stratifX*stratifY;
 
-
-//void QYTStratifiedSampler_test()
-//{
-//    QYTStratifiedSampler stratifiedSampler(0.f, 1.f,
-//                                           0.f, 1.f,
-//                                           16, 16,
-//                                           true,
-//                                           0.f, 0.1f);
-//    
-//    QYTSample *samples = new QYTSample[stratifiedSampler.maximumSampleCount()];
-//    
-////    for (int i = 0; i < stratifiedSampler.maximumSampleCount(); ++i)
-////    {
-////        samples[i].add1D(<#uint32_t num#>)
-////    }
-//    
-//    QYTRNG rng;
-//    
-//    stratifiedSampler.getMoreSamples(samples, rng);
-//    
-//    for (uint32_t i = 0; i < stratifiedSampler.maximumSampleCount(); ++i)
-//    {
-//        for (uint32_t j = 0; j < samples[i].n1D.size(); ++j)
-//        {
-//            for (uint32_t u = 0; u < samples[i].n1D[j]; ++u)
-//            {
-//                std::cout << samples[i].oneD[j][u] << std::endl;
-//            }
-//        }
-//    }
-//    
-////    QYTRNG rng;
-////    QYTSample samples;
-////    samples.add1D(16);
-////    samples.allocateSampleMemory();
-////    
-////    QYTLatinHypercube(samples.oneD[0], 256, 1, rng);
-////    
-////    for (int i = 0; i < samples.n1D.size(); ++i)
-////    {
-////        for (int j = 0; j < samples.n1D[i]; j++)
-////        {
-////            std::cout << samples.oneD[i][j] << std::endl;
-////        }
-////    }
-//    
-//}
-//
-void QYTImageFilm_test()
+void QYTStratifiedSampler_test()
 {
-    QYTBoxFilter boxFilter(0.5, 0.5);
+    QYTStratifiedSampler stratifiedSampler(0.f, 1.f,
+                                           0.f, 1.f,
+                                           16, 16,
+                                           true,
+                                           0.f, 0.1f);
     
-    const float crop[4] = {0,1,0,1};
+    QYTSample *samples = new QYTSample[stratifiedSampler.maximumSampleCount()];
     
-    QYTImageFilm film(32, 32,
-                      &boxFilter,
-                      crop,
-                      "/Users/nocolor/Desktop/QYTImageFilm_test.tga");
+//    for (int i = 0; i < stratifiedSampler.maximumSampleCount(); ++i)
+//    {
+//        samples[i].add1D(<#uint32_t num#>)
+//    }
     
-    QYTStratifiedSampler sampler(0, 5,
-                                 0, 5,
-                                 stratifX, stratifY,
-                                 true,
-                                 0, 0.05);
-    
-    
-    QYTSample samples[samplesPerPixel];
     QYTRNG rng;
     
-
+    stratifiedSampler.getMoreSamples(samples, rng);
     
-    for (int x = 0; x < imageWight; ++x)
+    for (uint32_t i = 0; i < stratifiedSampler.maximumSampleCount(); ++i)
     {
-        for (int y = 0; y < imageHight; ++y)
+        for (uint32_t j = 0; j < samples[i].n1D.size(); ++j)
         {
-            sampler.getMoreSamples(samples, rng);
-            
-            for (int i = 0; i < samplesPerPixel; ++i)
+            for (uint32_t u = 0; u < samples[i].n1D[j]; ++u)
             {
-                std::cout << samples[i].imageX << ", " << samples[i].imageY << std::endl;
-                film.addSample(samples[i], QYTSpectrum(1, 0, 0));
+                std::cout << samples[i].oneD[j][u] << std::endl;
             }
         }
     }
     
-    film.writeImage();
+//    QYTRNG rng;
+//    QYTSample samples;
+//    samples.add1D(16);
+//    samples.allocateSampleMemory();
+//    
+//    QYTLatinHypercube(samples.oneD[0], 256, 1, rng);
+//    
+//    for (int i = 0; i < samples.n1D.size(); ++i)
+//    {
+//        for (int j = 0; j < samples.n1D[i]; j++)
+//        {
+//            std::cout << samples.oneD[i][j] << std::endl;
+//        }
+//    }
+    
 }
 
+<<<<<<< HEAD
 void QYTCamera_test()
 {
     QYTPoint3 p(1, 0, 100);
@@ -123,24 +74,13 @@ void QYTCamera_test()
 
 ///测试图像管线、采样器、相机、线程池、基础图元
 int QYTRender_ver_1_5_test()
+=======
+void QYTImageFilm_test()
+>>>>>>> parent of e9f0f1b... 对现行版本的组件进行了功能和可行性测试
 {
-    //一个定义在世界坐标中的变换，T可以是各种仿射变换的级联
-    QYTTransform T = QYTTranslate(50, 0, 0);
+    QYTBoxFilter boxFilter(1, 1);
     
-    //创建一个从世界坐标到局部坐标的变换，
-    //这个变换将会把定义在世界坐标中的物体转换到某个局部坐标系中
-    std::shared_ptr<QYTTransform> w2o =
-    std::make_shared<QYTTransform>(T);
-    
-    QYTSphere sphere(w2o,               //转换到局部坐标的变换
-                     false,             //不翻转法线
-                     60.f,               //半径
-                     -60,                 //纵向起点
-                     60,               //纵向终点
-                     360.f);            //旋转角（注意使用角度不是弧度）
-    
-    
-    
+<<<<<<< HEAD
     //设置相机开始的位置
     std::shared_ptr<QYTTransform> cameraStart =
     std::make_shared<QYTTransform>(!QYTLookAt(QYTPoint3(0, 0, 400),
@@ -228,6 +168,14 @@ int QYTRender_ver_1_5_test()
         }
     
     film->writeImage();
+=======
+    const float crop[4] = {0,1,0,1};
     
-    return 0;
+    QYTImageFilm film(400, 400,
+                      &boxFilter,
+                      crop,
+                      "/Users/nocolor/Desktop/test.tga");
+>>>>>>> parent of e9f0f1b... 对现行版本的组件进行了功能和可行性测试
+    
+    film.writeImage();
 }
