@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "303"
             endingLineNumber = "303"
-            landmarkName = "QYTLookAt(const QYTPoint3&amp; pos, const QYTPoint3&amp; look, const QYTVec3&amp; up)"
+            landmarkName = "QYTPerspective(float fov, float n, float f)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
