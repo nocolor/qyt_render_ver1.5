@@ -12,7 +12,8 @@
 void QYTSphere_test()
 {
     
-    QYTTransform CTM = QYTTransform::MakeLCRTransfrom(QYTTranslate(0.f, 0.f, 0.f));
+    QYTTransform CTM;
+    CTM = QYTTransform::MakeLCRTransfrom(QYTTranslate(0.f, 0.f, 0.f));
     
     std::shared_ptr<QYTTransform> w2o = std::make_shared<QYTTransform>(CTM);
     
