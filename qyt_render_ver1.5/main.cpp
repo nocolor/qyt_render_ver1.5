@@ -1,4 +1,4 @@
-//
+﻿//
 //  main.cpp
 //  qyt_render_ver1.5
 //
@@ -20,7 +20,7 @@
 using namespace std;
 using namespace QYT;
 
-
+//测试一下gitHub同步
 
 int main(int argc, const char * argv[])
 {
