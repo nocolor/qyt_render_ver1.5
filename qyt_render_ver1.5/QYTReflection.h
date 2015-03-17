@@ -111,6 +111,12 @@ namespace QYT
         BSDF_ALL_TRANSMISSION
     };
     
+    /**
+     @class QYTBxDF
+     QYTBxDF是反射和传输模型的基类，它是可以表示BRDF和BTDF。
+     两种函数都用完全一样的接口，因此它们共同使用一个基类。它们
+     靠一个QYTBxDF_TYPE量来区分。
+     */
     class QYTBxDF
     {
     public:
@@ -162,22 +168,33 @@ namespace QYT
          */
         virtual QYTReal pdf(const QYTVec3& wi, const QYTVec3& wo) const;
         
-        virtual ~QYTBxDF();
+        virtual ~QYTBxDF(){}
         
     };
     
+    /**
+     @class QYT_BRDFAdapter
+     QYT_BTDFAdapter是一个利用BxDF代码实现光线传输模型的适配器。
+     它使用BxDF的接口，并在此基础上稍作封装。
+     */
     class QYT_BTDFAdapter:public QYTBxDF
     {
     private:
+        ///由于包含一个BxDF的指针，因此通过此指针调用BxDF的方法
         QYTBxDF* brdf;
         
     public:
         QYT_BTDFAdapter(QYTBxDF* b):
+        
+        /**
+         构造函数将反射模型的type转化成传输标志。
+         */
         QYTBxDF(QYTBxDF_TYPE(b->type ^ (BSDF_REFLECTION | BSDF_TRANSMISSION)))
         {
             brdf = b;
         }
         
+        ///将w转换到另一个半球空间
         static QYTVec3 otherHemisphere(const QYTVec3 &w)
         {
             return QYTVec3(w.x, w.y, -w.z);
@@ -197,6 +214,44 @@ namespace QYT
         }
         QYTReal pdf(const QYTVec3& wo, const QYTVec3& wi) const;
         
+    };
+    
+    /**
+     可以用线性方法对BxDF进行缩放。
+     */
+    class QYTScaledBxDF:public QYTBxDF
+    {
+    private:
+        QYTSpectrum s;
+        QYTBxDF*    bxdf;
+        
+    public:
+        QYTScaledBxDF(QYTBxDF* b, const QYTSpectrum& sc):
+        QYTBxDF(QYTBxDF_TYPE(b->type)), bxdf(b), s(sc)
+        {}
+        
+        QYTSpectrum rho(const QYTVec3& w, int nSamples, const QYTReal* samples) const
+        {
+            return s * bxdf->rho(w, nSamples, samples);
+        }
+        
+        QYTSpectrum rho(int nSamples, const QYTReal* samples1, const QYTReal* samples2) const
+        {
+            return s * bxdf->rho(nSamples, samples1, samples2);
+        }
+        
+        QYTSpectrum f(const QYTVec3& wo, const QYTVec3& wi) const;
+        QYTSpectrum sample_f(const QYTVec3& wo, QYTVec3* wi, QYTReal u1, QYTReal u2, QYTReal* pdf) const;
+    };
+    
+    /**
+     @class QYTFresnel
+     表示菲涅尔折射模型的类。
+     */
+    class QYTFresnel
+    {
+        virtual ~QYTFresnel();
+        virtual QYTSpectrum evaluate(QYTReal cosi) const = 0;
     };
 }
 

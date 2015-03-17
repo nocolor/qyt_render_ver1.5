@@ -14,6 +14,8 @@
 #include "QYTAnimatedTransform.h"
 #include "QYTRNG.h"
 
+#include "QYTLambertian.h"
+
 using namespace QYT;
 const int imageWight = 400, imageHight = 400;
 const int stratifX = 2, stratifY = 2;
@@ -163,7 +165,7 @@ int QYTRender_ver_1_5_test()
                                 screenWindow,       //屏幕窗口
                                 0.0,                //开启快门的时间
                                 0.05,               //关闭快门的时间
-                                5.0f,               //透镜半径
+                                0.0f,               //透镜半径
                                 100.f,               //焦平面距离
                                 60,                 //视角
                                 film);              //底片
@@ -191,7 +193,7 @@ int QYTRender_ver_1_5_test()
             for (int i = 0; i < samplesPerPixel; ++i)
             {
                 QYTDifferentialGeometry dg; //储存交点处的详细信息
-                QYTReal rayEpsilon;           //避免自相交
+                QYTReal rayEpsilon;         //避免自相交
                 QYTReal tHit;               //交点的t值
                 
                 QYTRayDifferential cameraRay;//(QYTPoint3(cameraSample[i].imageX, cameraSample[i].imageY, 100), QYTVec3(0, 0, -1), 0.0);
@@ -214,6 +216,13 @@ int QYTRender_ver_1_5_test()
         }
     
     film->writeImage();
+    
+    return 0;
+}
+
+int QYTLambertian_test()
+{
+    QYTLambertian bxdf(QYTSpectrum(1.f));
     
     return 0;
 }
