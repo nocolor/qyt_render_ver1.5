@@ -20,6 +20,8 @@
 		2B4690031AA4B775004C25EE /* QYTImageFilm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B4690011AA4B775004C25EE /* QYTImageFilm.cpp */; };
 		2B4FA1B91AB84B7400DEB055 /* QYTLambertian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FA1B71AB84B7400DEB055 /* QYTLambertian.cpp */; };
 		2B4FA1BC1AB84E8600DEB055 /* QYTFucAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FA1BA1AB84E8600DEB055 /* QYTFucAPI.cpp */; };
+		2B4FA1BF1AB85D1300DEB055 /* QYTTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FA1BD1AB85D1300DEB055 /* QYTTexture.cpp */; };
+		2B4FA1C21AB85F8F00DEB055 /* QYTUVTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FA1C01AB85F8F00DEB055 /* QYTUVTexture.cpp */; };
 		2B588F8D1AA962CA004A0EA4 /* QYTStratifiedSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B588F8B1AA962CA004A0EA4 /* QYTStratifiedSampler.cpp */; };
 		2B588FA91AA977FC004A0EA4 /* QYTRNG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B588FA71AA977FC004A0EA4 /* QYTRNG.cpp */; };
 		2B61047F1AB45670003512A1 /* QYTReflection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B61047D1AB45670003512A1 /* QYTReflection.cpp */; };
@@ -82,6 +84,10 @@
 		2B4FA1B81AB84B7400DEB055 /* QYTLambertian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTLambertian.h; sourceTree = "<group>"; };
 		2B4FA1BA1AB84E8600DEB055 /* QYTFucAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTFucAPI.cpp; sourceTree = "<group>"; };
 		2B4FA1BB1AB84E8600DEB055 /* QYTFucAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTFucAPI.h; sourceTree = "<group>"; };
+		2B4FA1BD1AB85D1300DEB055 /* QYTTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTTexture.cpp; sourceTree = "<group>"; };
+		2B4FA1BE1AB85D1300DEB055 /* QYTTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTTexture.h; sourceTree = "<group>"; };
+		2B4FA1C01AB85F8F00DEB055 /* QYTUVTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTUVTexture.cpp; sourceTree = "<group>"; };
+		2B4FA1C11AB85F8F00DEB055 /* QYTUVTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTUVTexture.h; sourceTree = "<group>"; };
 		2B588F8B1AA962CA004A0EA4 /* QYTStratifiedSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTStratifiedSampler.cpp; sourceTree = "<group>"; };
 		2B588F8C1AA962CA004A0EA4 /* QYTStratifiedSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTStratifiedSampler.h; sourceTree = "<group>"; };
 		2B588FA71AA977FC004A0EA4 /* QYTRNG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTRNG.cpp; sourceTree = "<group>"; };
@@ -175,6 +181,17 @@
 			name = filter;
 			sourceTree = "<group>";
 		};
+		2B4FA1C31AB860AB00DEB055 /* texture */ = {
+			isa = PBXGroup;
+			children = (
+				2B4FA1BD1AB85D1300DEB055 /* QYTTexture.cpp */,
+				2B4FA1BE1AB85D1300DEB055 /* QYTTexture.h */,
+				2B4FA1C01AB85F8F00DEB055 /* QYTUVTexture.cpp */,
+				2B4FA1C11AB85F8F00DEB055 /* QYTUVTexture.h */,
+			);
+			name = texture;
+			sourceTree = "<group>";
+		};
 		2B6104801AB45678003512A1 /* reflaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +233,7 @@
 		2BA32B571A908D1D00134940 /* qyt_render_ver1.5 */ = {
 			isa = PBXGroup;
 			children = (
+				2B6104841AB70A23003512A1 /* main.cpp */,
 				2BA32B631A908D4100134940 /* fundation */,
 			);
 			path = qyt_render_ver1.5;
@@ -224,7 +242,6 @@
 		2BA32B631A908D4100134940 /* fundation */ = {
 			isa = PBXGroup;
 			children = (
-				2B6104841AB70A23003512A1 /* main.cpp */,
 				2B6104851AB70A23003512A1 /* QYTError.cpp */,
 				2B6104861AB70A23003512A1 /* QYTError.h */,
 				2B6104871AB70A23003512A1 /* qytr.h */,
@@ -246,6 +263,7 @@
 				2BE37B651A946E77006536C2 /* vector */,
 				2B148C051A9EFBAA00BDF4FD /* spectrum */,
 				2B6104801AB45678003512A1 /* reflaction */,
+				2B4FA1C31AB860AB00DEB055 /* texture */,
 			);
 			name = fundation;
 			sourceTree = "<group>";
@@ -412,6 +430,7 @@
 				2B6104891AB70A23003512A1 /* QYTError.cpp in Sources */,
 				2BE37B691A948F2C006536C2 /* QYTPoint3.cpp in Sources */,
 				2BD99FF61A95F685000B701E /* qyt_join_thread.cpp in Sources */,
+				2B4FA1C21AB85F8F00DEB055 /* QYTUVTexture.cpp in Sources */,
 				2BD99FE51A959BB4000B701E /* QYTSphere.cpp in Sources */,
 				2BE37B751A94C198006536C2 /* qyt_ray.cpp in Sources */,
 				2B148C041A9EFBA400BDF4FD /* QYTSpectrum.cpp in Sources */,
@@ -431,6 +450,7 @@
 				2BD99FF51A95F685000B701E /* qyt_thread_safe_queue.cpp in Sources */,
 				2BD9A0031A96327E000B701E /* QYTTimer.cpp in Sources */,
 				2B468FF81AA46581004C25EE /* QYTFilm.cpp in Sources */,
+				2B4FA1BF1AB85D1300DEB055 /* QYTTexture.cpp in Sources */,
 				2B4690031AA4B775004C25EE /* QYTImageFilm.cpp in Sources */,
 				2B61048C1AB70A66003512A1 /* QYTTest.cpp in Sources */,
 				2BD99FF91A95F685000B701E /* qyt_thread_pool.cpp in Sources */,
