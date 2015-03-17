@@ -22,6 +22,7 @@
 		2B4FA1BC1AB84E8600DEB055 /* QYTFucAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FA1BA1AB84E8600DEB055 /* QYTFucAPI.cpp */; };
 		2B4FA1BF1AB85D1300DEB055 /* QYTTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FA1BD1AB85D1300DEB055 /* QYTTexture.cpp */; };
 		2B4FA1C21AB85F8F00DEB055 /* QYTUVTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FA1C01AB85F8F00DEB055 /* QYTUVTexture.cpp */; };
+		2B4FA1C61AB8665600DEB055 /* QYTMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FA1C41AB8665600DEB055 /* QYTMaterial.cpp */; };
 		2B588F8D1AA962CA004A0EA4 /* QYTStratifiedSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B588F8B1AA962CA004A0EA4 /* QYTStratifiedSampler.cpp */; };
 		2B588FA91AA977FC004A0EA4 /* QYTRNG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B588FA71AA977FC004A0EA4 /* QYTRNG.cpp */; };
 		2B61047F1AB45670003512A1 /* QYTReflection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B61047D1AB45670003512A1 /* QYTReflection.cpp */; };
@@ -88,6 +89,8 @@
 		2B4FA1BE1AB85D1300DEB055 /* QYTTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTTexture.h; sourceTree = "<group>"; };
 		2B4FA1C01AB85F8F00DEB055 /* QYTUVTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTUVTexture.cpp; sourceTree = "<group>"; };
 		2B4FA1C11AB85F8F00DEB055 /* QYTUVTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTUVTexture.h; sourceTree = "<group>"; };
+		2B4FA1C41AB8665600DEB055 /* QYTMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTMaterial.cpp; sourceTree = "<group>"; };
+		2B4FA1C51AB8665600DEB055 /* QYTMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTMaterial.h; sourceTree = "<group>"; };
 		2B588F8B1AA962CA004A0EA4 /* QYTStratifiedSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTStratifiedSampler.cpp; sourceTree = "<group>"; };
 		2B588F8C1AA962CA004A0EA4 /* QYTStratifiedSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTStratifiedSampler.h; sourceTree = "<group>"; };
 		2B588FA71AA977FC004A0EA4 /* QYTRNG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QYTRNG.cpp; sourceTree = "<group>"; };
@@ -264,6 +267,8 @@
 				2B148C051A9EFBAA00BDF4FD /* spectrum */,
 				2B6104801AB45678003512A1 /* reflaction */,
 				2B4FA1C31AB860AB00DEB055 /* texture */,
+				2B4FA1C41AB8665600DEB055 /* QYTMaterial.cpp */,
+				2B4FA1C51AB8665600DEB055 /* QYTMaterial.h */,
 			);
 			name = fundation;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				2B468FF51AA44ECD004C25EE /* QYTAnimatedTransform.cpp in Sources */,
 				2B588F8D1AA962CA004A0EA4 /* QYTStratifiedSampler.cpp in Sources */,
 				2B03C8D31AB29A3600EEDFA6 /* QYTCamera.cpp in Sources */,
+				2B4FA1C61AB8665600DEB055 /* QYTMaterial.cpp in Sources */,
 				2B6104881AB70A23003512A1 /* main.cpp in Sources */,
 				2B468FF21AA42150004C25EE /* QYTQuaternion.cpp in Sources */,
 				2B588FA91AA977FC004A0EA4 /* QYTRNG.cpp in Sources */,

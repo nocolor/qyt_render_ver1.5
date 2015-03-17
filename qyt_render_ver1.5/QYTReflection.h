@@ -12,6 +12,9 @@
 #include "qytr.h"
 #include "QYTVector3.h"
 #include "QYTSpectrum.h"
+#include "QYTRNG.h"
+#include "QYTSampler.h"
+#include "QYTDifferentialGeometry.h"
 
 namespace QYT
 {
@@ -252,6 +255,111 @@ namespace QYT
     {
         virtual ~QYTFresnel();
         virtual QYTSpectrum evaluate(QYTReal cosi) const = 0;
+    };
+    
+    struct QYTBSDFSampleOffset
+    {
+        QYTBSDFSampleOffset() { }
+        QYTBSDFSampleOffset(int count, QYTSample *sample);
+        int nSamples, componentOffset, dirOffset;
+    };
+    
+    struct QYTBSDFSample
+    {
+        QYTBSDFSample(float up0, float up1, float ucomp)
+        {
+            Assert(up0 >= 0.f && up0 < 1.f);
+            Assert(up1 >= 0.f && up1 < 1.f);
+            Assert(ucomp >= 0.f && ucomp < 1.f);
+            uDir[0] = up0;
+            uDir[1] = up1;
+            uComponent = ucomp;
+        }
+        QYTBSDFSample(QYTRNG &rng) {
+            uDir[0] = rng.randomFloat(0, 1);
+            uDir[1] = rng.randomFloat(0, 1);
+            uComponent = rng.randomFloat(0, 1);
+        }
+        QYTBSDFSample(const QYTSample *sample, const QYTBSDFSampleOffset &offsets, uint32_t num);
+        QYTBSDFSample() { }
+        float uDir[2], uComponent;
+    };
+    
+    /**
+     @class QYTBSDF
+     QYTBSDF类代表了一组BRDF和BTDF。将它们以这种方式组织在一起，目的是允许
+     系统的其它部分能够直接跟复合型的BSDF打交道，而不是必须考虑其中每一个组成部分。
+     */
+    class QYTBSDF
+    {
+    private:
+        QYTNormal3 nn, ng;
+        QYTVec3 sn, tn;
+        int nBxDFs;
+#define MAX_BxDFS 8
+        QYTBxDF* bxdfs[MAX_BxDFS];
+        
+    public:
+        QYTSpectrum sample_f(const QYTVec3& wo, QYTVec3* wi, const QYTBSDFSample& bsdfSample,
+                             float* pdf, QYTBxDF_TYPE flags = BSDF_ALL,
+                             QYTBxDF_TYPE* sampledType = nullptr) const;
+        
+        float pdf(const QYTVec3& wo, const QYTVec3& wi, QYTBxDF_TYPE flags = BSDF_ALL) const;
+        
+        QYTBSDF(const QYTDifferentialGeometry& dgs, const QYTNormal3& ngeom, float eta = 1.f);
+        void add(QYTBxDF* bxdf)
+        {
+            Assert(nBxDFs < MAX_BxDFS);
+            bxdfs[nBxDFs++] = bxdf;
+        }
+        
+        int numComponents() const {return nBxDFs;}
+        
+        int numComponents(QYTBxDF_TYPE flags) const
+        {
+            int num = 0;
+            for (int i = 0; i < nBxDFs; ++i)
+                if (bxdfs[i]->matchesFlags(flags)) ++num;
+            return num;
+        }
+        
+        QYTVec3 worldToLocal(const QYTVec3& v) const
+        {
+            return QYTVec3(QYTVec3::Dot(v, sn), QYTVec3::Dot(v, tn), QYTVec3::Dot(v, nn));
+        }
+        
+        QYTVec3 localToWorld(const QYTVec3 &v) const
+        {
+            return QYTVec3(sn.x * v.x + tn.x * v.y + nn.x * v.z,
+                           sn.y * v.x + tn.y * v.y + nn.y * v.z,
+                           sn.z * v.x + tn.z * v.y + nn.z * v.z);
+        }
+        
+        QYTSpectrum f(const QYTVec3& woW, const QYTVec3& wiW,
+                      QYTBxDF_TYPE flag = BSDF_ALL) const;
+        
+        QYTSpectrum rho(QYTRNG& rng, QYTBxDF_TYPE flags = BSDF_ALL,
+                        int sqrtSamples = 6) const;
+        QYTSpectrum rho(const QYTVec3& wo, QYTRNG& rng, QYTBxDF_TYPE flags = BSDF_ALL,
+                        int sqrtSamples = 6) const;
+        
+        const QYTDifferentialGeometry dgShading;
+        const float eta;
+    };
+    
+    class QYTBSSRDF
+    {
+    public:
+        // BSSRDF Public Methods
+        QYTBSSRDF(const QYTSpectrum &sa, const QYTSpectrum &sps, float et)
+        : e(et), sig_a(sa), sigp_s(sps) { }
+        float eta() const { return e; }
+        QYTSpectrum sigma_a() const { return sig_a; }
+        QYTSpectrum sigma_prime_s() const { return sigp_s; }
+    private:
+        // BSSRDF Private Data
+        float e;
+        QYTSpectrum sig_a, sigp_s;
     };
 }
 

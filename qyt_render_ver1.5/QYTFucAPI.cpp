@@ -32,4 +32,10 @@ namespace QYT
         float y = r * sinf(phi);
         return QYTVec3(x, y, z);
     }
+    
+    void qyt_stratified_sample2D(float *samp, int nx, int ny, QYTRNG &rng,
+                                 bool jitter)
+    {
+        QYTStratifiedSample2D(samp, nx, ny, rng, jitter);
+    }
 }

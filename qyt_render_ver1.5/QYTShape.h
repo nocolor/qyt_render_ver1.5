@@ -87,7 +87,14 @@ namespace QYT
                                  QYTNormal3 *Ns) const;
         
         virtual QYTReal pdf(const QYTPoint3 &p, const QYTVector3 &wi) const;
+        
+        
     };
+    
+    inline QYTVec3 QYTFaceforward(const QYTVec3 &v, const QYTVec3 &v2) {
+        return (QYTVec3::Dot(v, v2) < 0.f) ? -v : v;
+    }
+
 }
 
 #endif /* defined(__lightCoreRender__QYTShape__) */

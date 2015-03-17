@@ -23,6 +23,8 @@ namespace QYT
     void qyt_concentric_sample_disk(float u1, float u2, float *dx, float *dy);
     QYTVec3 qyt_cosine_sample_hemisphere(float u1, float u2);
     QYTVec3 qyt_uniform_sample_hemisphere(float u1, float u2);
+    void qyt_stratified_sample2D(float *samp, int nx, int ny, QYTRNG &rng,
+                                 bool jitter = true);
 }
 
 #endif /* defined(__qyt_render_ver1_5__QYTFucAPI__) */
