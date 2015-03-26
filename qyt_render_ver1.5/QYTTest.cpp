@@ -15,6 +15,9 @@
 #include "QYTRNG.h"
 
 #include "QYTLambertian.h"
+#include "QYTMemory.h"
+#include <sstream>
+#include "qyt_thread_pool.h"
 
 using namespace QYT;
 const int imageWight = 400, imageHight = 400;
@@ -223,6 +226,71 @@ int QYTRender_ver_1_5_test()
 int QYTLambertian_test()
 {
     QYTLambertian bxdf(QYTSpectrum(1.f));
+    
+    return 0;
+}
+
+int QYTReference_test()
+{
+    class Foo:public qyt_reference_counted
+    {
+    public:
+        
+        std::string info;
+        
+        ~Foo()
+        {std::cout << info << ": deleted.\n";}
+        
+        Foo(std::string _info = "Foo"):info(_info)
+        {std::cout << info << ": allocated.\n";}
+        
+        Foo(const Foo& src)
+        {
+            info = src.info;
+        }
+        
+        int getReference() const
+        {return this->references;}
+    };
+    
+    class Task
+    {
+
+    public:
+        typedef qyt_reference<Foo> TaskType;
+        typedef std::string TaskRes;
+        
+        Task(TaskType _f1, TaskType _f2):f1(_f1), f2(_f2){}
+        std::string operator()()
+        {
+            TaskType currentF1 = f1, currentF2 = f2;
+            return currentF1->info + currentF2->info;
+//            return f1->info + f2->info;
+        }
+    protected:
+        TaskType f1, f2;
+    };
+    
+    Task::TaskType datas[16];
+    
+    for (int i = 0; i < 16; ++i)
+    {
+        std::stringstream ss;
+        ss << i;
+        std::string tmp;
+        ss >> tmp;
+        datas[i] = new Foo("FooTask"+tmp);
+    }
+    
+    qyt_thread_pool pool;
+    std::future<Task::TaskRes> res[8];
+    
+    for (int i = 0; i < 8; ++i)
+        res[i] = pool.submit(Task(datas[i*2], datas[i*2+1]));
+
+    
+    for (int i = 0; i < 8; ++i)
+        std::cout << res[i].get() << std::endl;
     
     return 0;
 }

@@ -21,8 +21,8 @@ int main(int argc, const char * argv[])
     
     cout << "light core render Ver:" << QYTR_VERSION << endl;
     
-    QYTRender_ver_1_5_test();
-    
+//    QYTRender_ver_1_5_test();
+    QYTReference_test();
 
 
     return 0;

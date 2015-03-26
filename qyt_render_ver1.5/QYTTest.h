@@ -20,4 +20,7 @@ int QYTRender_ver_1_5_test();
 
 int QYTLambertian_test();
 
+///测试引用计数的类，特别是在多线程中
+int QYTReference_test();
+
 #endif /* defined(__qyt_render_ver1_5__QYTTest__) */

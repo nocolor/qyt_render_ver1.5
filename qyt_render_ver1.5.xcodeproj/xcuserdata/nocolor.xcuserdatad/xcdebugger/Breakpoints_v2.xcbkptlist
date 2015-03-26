@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "qyt_render_ver1.5/QYTTest.cpp"
-            timestampString = "447994718.770012"
+            timestampString = "449036900.761689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
             landmarkName = "QYTLambertian_test()"
             landmarkType = "7">
          </BreakpointContent>
@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "303"
             endingLineNumber = "303"
-            landmarkName = "QYTPerspective(float fov, float n, float f)"
+            landmarkName = "QYTLookAt(const QYTPoint3&amp; pos, const QYTPoint3&amp; look, const QYTVec3&amp; up)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
