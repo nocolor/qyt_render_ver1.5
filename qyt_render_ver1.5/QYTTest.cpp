@@ -253,9 +253,10 @@ int QYTReference_test()
         {return this->references;}
     };
     
+    static qyt_reference<Foo> stk_foo;
+    
     class Task
     {
-
     public:
         typedef qyt_reference<Foo> TaskType;
         typedef std::string TaskRes;
@@ -263,9 +264,11 @@ int QYTReference_test()
         Task(TaskType _f1, TaskType _f2):f1(_f1), f2(_f2){}
         std::string operator()()
         {
-            TaskType currentF1 = f1, currentF2 = f2;
-            return currentF1->info + currentF2->info;
-//            return f1->info + f2->info;
+            stk_foo = f1;
+            f1 = f2;
+            f2 = stk_foo;
+            
+            return f1->info + f2->info;
         }
     protected:
         TaskType f1, f2;
@@ -291,6 +294,88 @@ int QYTReference_test()
     
     for (int i = 0; i < 8; ++i)
         std::cout << res[i].get() << std::endl;
+    
+    return 0;
+}
+
+static std::shared_ptr<int> g = std::make_shared<int>(0);
+void task_A(std::shared_ptr<int> ag)
+{
+    std::shared_ptr<int> x = ag;
+}
+
+void task_B(std::shared_ptr<int> ag)
+{
+    std::shared_ptr<int> n = std::make_shared<int>(99);
+    ag = n;
+}
+
+
+int QYTReference_test_2()
+{
+    /*
+    static std::shared_ptr<QYTTransform> golbal(new QYTTransform(QYTTranslate(0, 0, 0)));
+    
+    class qyt_task_A
+    {
+    public:
+        std::shared_ptr<QYTTransform> Ta;
+        qyt_task_A(const std::shared_ptr<QYTTransform> _Ta):Ta(_Ta){}
+        
+        QYTTransform operator()()
+        {
+            golbal = Ta;
+            return QYTTransform(*Ta);
+        }
+    };
+    
+    class qyt_task_B
+    {
+    public:
+        std::shared_ptr<QYTTransform> Tb;
+        qyt_task_B(const std::shared_ptr<QYTTransform> _Tb):Tb(_Tb){}
+        QYTTransform operator()()
+        {
+            golbal = Tb;
+            return QYTTransform(*Tb);
+        }
+    };
+    
+    std::shared_ptr<QYTTransform> t(new QYTTransform(QYTTranslate(2, 3, 4)));
+    
+    qyt_task_A A(t);
+    qyt_task_B B(t);
+    
+//    std::cout << A() << std::endl;
+//    std::cout << B() << std::endl;
+//    std::cout << *golbal << std::endl;
+    
+    qyt_thread_pool pool;
+    
+    std::future<QYTTransform> res[2];
+    
+    res[1] = pool.submit(B);
+    res[0] = pool.submit(A);
+    
+    
+    std::cout << res[0].get() << std::endl;
+    std::cout << res[1].get() << std::endl;
+    std::cout << *golbal << std::endl;
+    
+    return 0;
+     */
+    
+    
+//    std::thread A(task_A, g);
+//    std::thread B(task_B, g);
+//    
+//    A.join();
+//    B.join();
+
+    task_A(g);
+    task_B(g);
+    
+    std::cout << *g;
     
     return 0;
 }

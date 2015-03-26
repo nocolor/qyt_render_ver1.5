@@ -23,4 +23,7 @@ int QYTLambertian_test();
 ///测试引用计数的类，特别是在多线程中
 int QYTReference_test();
 
+///同shared_ptr进行比较测试
+int QYTReference_test_2();
+
 #endif /* defined(__qyt_render_ver1_5__QYTTest__) */
